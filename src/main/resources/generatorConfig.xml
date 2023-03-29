@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="PskDB" targetRuntime="MyBatis3Simple">
+        <jdbcConnection driverClass="org.h2.Driver"
+                        connectionURL="jdbc:h2:~/h2database/PskDB;AUTO_SERVER=TRUE"
+                        password="sa" userId="sa"/>
+
+        <javaModelGenerator targetPackage="lt.vu.mybatis.model" targetProject="MAVEN"/>
+
+        <sqlMapGenerator targetPackage="xml" targetProject="MAVEN"/>
+
+        <javaClientGenerator targetPackage="lt.vu.mybatis.dao" targetProject="MAVEN" type="XMLMAPPER"/>
+
+        <table schema="PUBLIC" tableName="AUTHOR">
+            <generatedKey column="id" identity="true" sqlStatement="JDBC"/>
+        </table>
+        <table schema="PUBLIC" tableName="BOOK">
+            <generatedKey column="id" identity="true" sqlStatement="JDBC"/>
+        </table>
+        <table schema="PUBLIC" tableName="GENRE">
+            <generatedKey column="id" identity="true" sqlStatement="JDBC"/>
+        </table>
+        <table schema="PUBLIC" tableName="BOOK_GENRE"/>
+    </context>
+</generatorConfiguration>
