@@ -8,7 +8,7 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 @ApplicationScoped
-public class BookDAO
+public class BookDAO implements IBookDAO
 {
     @Inject
     private EntityManager entityManager;
@@ -31,5 +31,10 @@ public class BookDAO
     public Book update(Book book)
     {
         return entityManager.merge(book);
+    }
+
+    public void delete(Book book)
+    {
+        this.entityManager.remove(book);
     }
 }

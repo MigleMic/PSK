@@ -21,9 +21,6 @@ public class Book implements Serializable
     @Column(name = "ID")
     private Integer id;
 
-    @Column(name = "ISBN", unique = true)
-    private String isbn;
-
     @Column(name = "NAME")
     private String name;
 

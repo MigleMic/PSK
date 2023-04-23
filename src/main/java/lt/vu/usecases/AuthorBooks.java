@@ -45,4 +45,11 @@ public class AuthorBooks implements Serializable
         bookToCreate.setAuthor(this.author);
         bookDAO.persist(bookToCreate);
     }
+
+    @Transactional
+    public void deleteBook(int bookID)
+    {
+        Book bookToDelete = bookDAO.findOne(bookID);
+        bookDAO.delete(bookToDelete);
+    }
 }
