@@ -34,6 +34,9 @@ public class Book implements Serializable
             inverseJoinColumns = @JoinColumn(name = "GENRE_ID"))
     private List<Genre> genres = new ArrayList<>();
 
+    @Version
+    @Column(name = "VERSION")
+    private Integer version;
     @Override
     public int hashCode()
     {
