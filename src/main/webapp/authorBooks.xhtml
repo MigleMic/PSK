@@ -19,11 +19,18 @@
         <ui:repeat value="#{authorBooks.author.books}" var="book">
             <li>
                 <h:link value="#{book.name}" outcome="bookDetails?bookId=#{book.id}"/>
+                <h:form>
+                    <h:commandButton value="Delete book"
+                                     actionListener="#{authorBooks.deleteBook(book.id)}"
+                                     action="#{'authorBooks?faces-redirect=true&amp;authorId='.concat(authorBooks.author.id)}">
+                        <f:param name="authorId" value="#{authorBooks.author.id}"/>
+                    </h:commandButton>
+                </h:form>
             </li>
         </ui:repeat>
     </ol>
     <h:form>
-        <h:inputText a:placeholder="Book name" value="#{authorBooks.bookToCreate.name}" required="true"/>
+        <h:inputText a:placeholder="Book name:" value="#{authorBooks.bookToCreate.name}" required="true"/>
         <h:selectManyCheckbox value="#{authorBooks.bookToCreate.genres}">
             <f:selectItems  value="#{genres.allGenres}" var="tag" itemValue="#{tag}" itemLabel="#{tag.name}"/>
         </h:selectManyCheckbox><br/>

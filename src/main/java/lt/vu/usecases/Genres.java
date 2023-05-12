@@ -33,7 +33,7 @@ public class Genres
     {
         this.allGenres = genreDAO.getAll();
     }
-
+    
     @Transactional
     public void createGenre()
     {

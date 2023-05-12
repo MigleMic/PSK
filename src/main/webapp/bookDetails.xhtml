@@ -18,9 +18,14 @@
     <h:form>
         <h:outputText value="New name:"/>
         <h:inputText a:placeholder="Enter the value" value="#{updateBookDetails.book.name}" required="true"/>
-        <h:commandButton value="Update" action="#{updateBookDetails.updateBook()}">
+        <br/><h:commandButton value="Update" action="#{updateBookDetails.updateBook()}">
                 <f:param name="bookId" value="#{updateBookDetails.book.id}"/>
-        </h:commandButton>
+        </h:commandButton><br/>
+        <h:commandButton value="Update ASYNC" action="#{updateBookName.updateAsync()}">
+            <f:param name="bookId" value="#{updateBookDetails.book.id}"/>
+        </h:commandButton><br/>
+        <h:outputText value="#{updateBookName.update1Status}"/><br/>
+        <h:outputText value="#{updateBookName.update2Status}"/>
     </h:form>
 </h:body>
 </html>
