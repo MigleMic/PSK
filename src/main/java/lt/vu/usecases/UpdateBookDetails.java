@@ -45,6 +45,6 @@ public class UpdateBookDetails implements Serializable
         {
             return "/bookDetails.xhtml?faces-redirect=true&bookId" + this.book.getId() + "&error=optimistic-lock-exception";
         }
-        return "bookDetails.xhtml?bookId=" + this.book.getId() + "&faces-redirect=true";
+        return "/authorBooks.xhtml?author=" + this.book.getAuthor().getId() + "&faces-redirect=true";
     }
 }
